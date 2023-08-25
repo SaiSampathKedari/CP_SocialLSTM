@@ -1,2 +1,2 @@
 # CP_SocialLSTM
-Conformal Prediction on Social LSTM
+Conformal Prediction on Social LSTM Trajectory Prediction
