@@ -1,4 +1,5 @@
 import argparse
+import logging
 import torch
 import random
 
@@ -49,6 +50,10 @@ def main():
     parser.add_argument("--batch_size", default=64, type=int)
     parser.add_argument("--num_epochs", default=400, type=int)
     args = parser.parse_args()
+
+    #
+    logging.info("Creating training dataset")
+    logging.info("Creating tesing dataset")
     train(args)
 
 def train(args):
