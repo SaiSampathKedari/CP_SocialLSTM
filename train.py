@@ -3,6 +3,11 @@ import logging
 import torch
 import random
 
+from dataloader.loader import data_loader
+
+from  utils import * 
+
+
 def main():
     parser = argparse.ArgumentParser()
     
@@ -51,9 +56,14 @@ def main():
     parser.add_argument("--num_epochs", default=400, type=int)
     args = parser.parse_args()
 
-    #
+    train_path = get_dset_path(args.dataset_name, "train")
+    val_path = get_dset_path(args.dataset_name, "test")
+
     logging.info("Creating training dataset")
+    train_dset = data_loader(args, train_path)
     logging.info("Creating tesing dataset")
+    train_dset = data_loader(args, train_path)
+    
     train(args)
 
 def train(args):
