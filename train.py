@@ -52,7 +52,7 @@ def main():
         default=72, 
         help="Random seed."
     )
-    parser.add_argument("--batch_size", default=64, type=int)
+    parser.add_argument("--batch_size", default=3, type=int) #change default to 64 later
     parser.add_argument("--num_epochs", default=400, type=int)
     args = parser.parse_args()
 
@@ -60,10 +60,18 @@ def main():
     val_path = get_dset_path(args.dataset_name, "test")
 
     logging.info("Creating training dataset")
-    train_dset = data_loader(args, train_path)
+    train_dset, train_loader = data_loader(args, train_path)
     logging.info("Creating tesing dataset")
-    train_dset = data_loader(args, train_path)
+    _, val_loader = data_loader(args, val_path)
+
     
+    tdata_iter = iter(train_loader)
+    data = next(tdata_iter)
+    #print(obs_traj.shape)
+    a = 1
+    b = 2
+    
+
     train(args)
 
 def train(args):

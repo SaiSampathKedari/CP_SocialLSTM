@@ -28,7 +28,6 @@ def seq_collate(data):
         pred_seq_list,
         obs_seq_rel_list,
         pred_seq_rel_list,
-        non_linear_ped_list,
         loss_mask_list,
     ) = zip(*data)
 
@@ -43,7 +42,7 @@ def seq_collate(data):
     pred_traj = torch.cat(pred_seq_list, dim=0).permute(2, 0, 1)
     obs_traj_rel = torch.cat(obs_seq_rel_list, dim=0).permute(2, 0, 1)
     pred_traj_rel = torch.cat(pred_seq_rel_list, dim=0).permute(2, 0, 1)
-    non_linear_ped = torch.cat(non_linear_ped_list)
+    #non_linear_ped = torch.cat(non_linear_ped_list)
     loss_mask = torch.cat(loss_mask_list, dim=0)
     seq_start_end = torch.LongTensor(seq_start_end)
     out = [
@@ -51,7 +50,6 @@ def seq_collate(data):
         pred_traj,
         obs_traj_rel,
         pred_traj_rel,
-        non_linear_ped,
         loss_mask,
         seq_start_end,
     ]
