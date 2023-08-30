@@ -63,14 +63,14 @@ def main():
     train_dset, train_loader = data_loader(args, train_path)
     logging.info("Creating tesing dataset")
     _, val_loader = data_loader(args, val_path)
-
-    
     tdata_iter = iter(train_loader)
     data = next(tdata_iter)
-    #print(obs_traj.shape)
-    a = 1
-    b = 2
-    
+
+    ## To Save Animation from the data
+    # biwipath = os.path.join(train_path, "biwi_eth_train.txt")
+    # #GetAnimationFromData(biwipath)
+    # newAnim = Anim(biwipath)
+    # print("Done with ANim")
 
     train(args)
 
