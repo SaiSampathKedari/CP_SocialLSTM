@@ -1,3 +1,5 @@
+This project is currently in development. Please refrain from forking it until further notice. Thank you for your understanding.
+
 # CP_SocialLSTM
 Conformal Prediction on Social LSTM Trajectory Prediction
 
